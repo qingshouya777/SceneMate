@@ -10,7 +10,7 @@
 
 **https://github.com/qingshouya777/SceneMate/releases/latest**
 
-1. 下载 `画面搭子_便携包.zip`（Windows 10/11 x64）；
+1. 下载 `SceneMate-portable-win64-v0.1.0.zip`（Windows 10/11 x64）；
 2. **完整解压**到一个普通文件夹（不要直接在压缩包里双击）；
 3. 双击 `启动.bat`。
 
