@@ -1,0 +1,10 @@
+* text=auto
+*.bat text eol=crlf
+*.py text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.ico binary
+*.png binary
+*.jpg binary
+*.zip binary

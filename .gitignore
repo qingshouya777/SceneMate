@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# 运行依赖（由 app/准备环境.bat 生成，不进仓库）
+app/runtime/
+app/dist/
+app/build/
+dist/
+build/
+*.spec
+
+# 本机个人数据（不进仓库）
+app/config.json
+app/config.bak.json
+app/memory.json
+app/state.json
+app/keys.dat
+app/日志.txt
+app/调度.txt
+app/启动日志.txt
+app/错误.txt
+app/_selftest.jpg
+app/_selftest.txt
+app/测试帧.jpg
+app/flow_baseline.json
+app/data/
+app/.data_migrated*
+.data_migrated*
+keys.dat
+memory.json
+state.json
+
+# 便携包 / 压缩包
+*.zip
+*.7z
+*.rar
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

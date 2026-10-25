@@ -1,0 +1,34 @@
+这些 .txt 就是她这一格收到的全部提示词。改完存盘，下一次调用立刻生效，不用重启。
+
+—— 文件清单 ——
+00_主提示词.txt   骨架，决定各段放在哪里。占位符别删，删了那一段就不出现。
+12_契约.txt       核心：她有什么、没有什么；先验；说话的样子；两条不许越的线。
+                  === rules / rules_story / full 三段：红线在提示词最前面和输出之前各压一次。
+65_分支.txt       这一格为什么开口。=== 分段：bubble/sign/transit/pause/desire/revisit/aesthetic/follow/follow_story/lang
+                  （调度层给哪个分支就只取那一段；故事线程的续锚取 follow_story。）
+55_线程.txt       她此刻挂在嘴边的那件事（锚 / 已经说到哪 / 开头-中间-结束 / 还剩几格）
+58_记账.txt       请求、问、欠账的清算队列（A2 由调度层维护，不靠模型记）
+68_接住.txt       A1：normal 段要求接住上一句；preempt 段明确「换话题」，不接上一句
+72_信号.txt       把画面信号翻成「她身上的感觉」（亮度跳了一档、有东西贴得很近…）
+05/06_称呼        怎么叫他、多久叫一次
+20_风格.txt       开场（look）和说话（talk）两段：短句、别金句、别对仗
+25_她的生活.txt   她是谁（性格背景，不许当眼前事实）
+35_沉默倾向.txt    rare / normal / often
+40_句式池.txt     一条一行，随机抽一条当起手式（只在接话格给）
+50_记忆说明.txt   normal / story 两段：怎么用自己说过的话
+60_输出格式.txt   三行：说 / 态 / 据。格式改了要同步改 contract.split_output()/parse_state()。
+70_记忆压缩.txt   长期记忆快满时怎么合并
+80_强制开口.txt   连续几格没说成之后逼她开口
+95_当前一帧.txt   最后一条 user 消息里的那句提示（故事格会被 brain.current_note_for 换掉）
+30_补充.txt       临时加的要求，留空就不加
+
+—— 可用的占位符（00 里） ——
+{{name}} {{relation}} {{rules_block}} {{story_note}} {{contract_block}}
+{{branch_block}} {{signal_block}} {{thread_block}} {{pending_block}} {{handoff_block}}
+{{memory}} {{style_block}} {{silence_block}} {{shape_block}} {{force_block}}
+{{output_format}}
+
+—— 三条纪律 ——
+1. 别在提示词里写"目标例句"。模型会原样抄去当成绩（实测过）。
+2. 提示词是**处境**，不是禁令清单。要加约束，先问：这是不是代码该给的结论？
+3. 改完 60_输出格式.txt 的标签，记得同步 contract.parse_state()，否则那一格会被当成没说话。
