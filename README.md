@@ -105,6 +105,14 @@ app/
 - 模型调用会产生费用；请不要把 Key 提交到仓库。
 - 画面、角色名和聊天内容都可能属于个人数据，提交 issue/截图前请先检查。
 
-## License
+## License / 商用授权
 
-MIT，见 [LICENSE](LICENSE)。
+源码公开（source-available），但**不是 OSI 开源许可**。本项目使用 **PolyForm Noncommercial License 1.0.0**：
+
+- 个人、学习、研究、非商业项目：可以免费使用、修改、分发；
+- 商业使用（包括公司内部生产使用、收费分发、SaaS、集成到商业产品）：必须事先获得作者书面授权；
+- 分发时请保留 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
+
+商用授权联系：https://github.com/qingshouya777
+
+详见 [LICENSE](LICENSE) 与 [NOTICE](NOTICE)。
